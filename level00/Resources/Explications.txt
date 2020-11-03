@@ -1,0 +1,4 @@
+Regarder dans le dossier /usr/sbin/
+Seul un fichier nommé john est un txt.
+cat john -> cdiiddwpgswtgt
+dcode.fr nous montre que c'est un code caesar avec un décalage de +15.
