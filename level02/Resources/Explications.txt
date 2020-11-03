@@ -1,0 +1,6 @@
+Un fichier est situé dans le home level02.pcap
+On utilise scp pour le copier sur notre machine scp -P 4242 level02@127.0.0.1:/home/user/level02/level02.pcap ~/
+On ouvre le fichier avec Wireshark.
+En séléctionnant une ligne, on peut voir que Wireshark nous séléctionne la partie publique et non cryptée de la requête.
+La ligne 43 indique "Password:" comme pour prompt un password a l'utilisateur.
+La suite des requêtes nous montre chaque caractère que l'utilisateur tape sur son clavier. On peut voir qu'il delete des caractères avec le code hexadécimal 7f ou encore qu'il appuie sur return avec le code héxadécimal 0d.
