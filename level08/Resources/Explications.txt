@@ -1,0 +1,9 @@
+En arrivant sur la vm on remarque un exécutable C avec un fichier token.
+En faisant un ltrace sur l'exécutable, on remarque qu'il fait un appel à strstr pour rechercher le mot token dans le nom du fichier passé en argument. 
+Si le fichier passé en argument ne contient pas le mot token, alors le programme affiche le contenu du fichier.
+Le but est d'afficher le contenu du fichier token. On créer donc un lien symbolique dans /var/tmp/ avec la commande ln -s ~/token /var/tmp/code
+On exécute ensuite le programme avec ./level08 /var/tmp/code
+Le programme affiche bien le contenu du fichier token.
+Pour exécuter la commande getflag, on se connecte en administrateur avec l'utilisateur level08 avec la commande su level08
+En mot de passe, on met le token récupéré précédement.
+On exécute ensuite la commande getflag pour avoir le flag.
