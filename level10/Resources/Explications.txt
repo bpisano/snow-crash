@@ -1,0 +1,15 @@
+En arrivant sur la vm, on remarque un exécutable avec un fichier token sur lqeuel nous n'avons pas les droits.
+ltrace sur level10 nous indique que l'exécutable utilise access et open. Il existe une faille concernant access et open.
+Nous devons aussi ouvrir le port 6969 pour que le programme puisse s'y connecter.
+
+Objectifs:
+- Ouvrir le port 6969.
+- Exploiter la faille "Race condition" pour obtenir les droits sur le fichier token.
+
+1. Ouvrir le port 6969.
+Simple, exécuter la commande nc -lk 6969.
+
+2. Exploiter la faille "Race condition".
+La faille race condition consiste à créer un lien symbolique rapidement sur un fichier dont nous avons les droits et celui dont nous cherchons à accéder pour profiter du court laps de temps entre le call à la fonction access et celui de la fonction open. Pour se faire :
+- Nous créons un script qui s'occupe des liens symboliques (voir symbolic.sh).
+- Nous créons un script qui exécute level10 en boucle avec notre lien symbolique (voir execute.sh).
