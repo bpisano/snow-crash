@@ -1,0 +1,4 @@
+En arrivant sur la vm, on remarque qu'il y a un exécutable avec un fichier token.
+En testant un peu le programme, on remarque que l'output du programme suit une règle simple : une lettre équivaut à sa position dans le mot + sa position dans l'alphabet.
+Nous avons donc écrit un petit script python qui permet de faire le contraire de cette opération (voir reverse.py).
+En exécutant python3 reverse.py `xxd -p ~/token`, on récupère le code qui nous permet de nous connecter avec l'utilisateur flag09 pour récupérer le flag avec getflag.
