@@ -1,0 +1,3 @@
+En arrivant sur la vm, on voit qu'il y a un exécutable C.
+En faisant ltrace level07, on remarque qu'il fait un appel à la variable d'environement LOGNAME.
+On exécute un export LOGNAME='`getflag`' pour forcer l'exécutable à afficher getflag.
