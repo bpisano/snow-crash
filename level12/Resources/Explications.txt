@@ -1,0 +1,5 @@
+En arrivant sur la vm, on voit qu'il y a un script perl.
+En essayant d'injecter du code, on se rend vite compte que les regex lignes 9 et 10 posent problème car elle transforment les minuscules en majuscules et suppriment tout ce qu'il y a après les espaces.
+On ne peut donc pas simplement injecter "getflag > /var/tmp/flag" qui serait remplacé par "GETFLAG".
+On passe donc par un fichier qui va exécuter le code, et injecter le chemin du fichier. (voir CODE)
+On exécute ensuite la commande curl 'localhost:4646?x="`/*/*/CODE`"' pour récupérer le code dans le fichier /var/tmp/flag
