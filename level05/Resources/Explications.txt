@@ -1,0 +1,5 @@
+En arrivant sur la vm, on voit qu'on a un nouveau mail. On regarde le mail avec cat /var/mail/$(whoami)
+Le mail contient */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05 qui est en fait une ligne de crontab.
+Ce script execute n'importe quel script dans le dossier /opt/openarenaserver/ avec les droits administrateurs.
+On créer un fichier bash dans /opt/openareaserver/ qui redirige la sortie de l'exécutable getflag dans un fichier dans lequel nous avons les droits. "getflag > /var/tmp/myflag"
+Au bout de deux minutes, le script s'execute et créer notre fichier /var/tmp/myflag. On cat ce fichier et on obtient le flag.

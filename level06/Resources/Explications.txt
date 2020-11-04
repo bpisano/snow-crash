@@ -1,0 +1,5 @@
+En arrivant sur la vm, on remarque un fichier php avec un exécutable permettant de run le php.
+On remarque que le fichier utilise des regex avec un modifier e qui permet d'exécuter du code avec une regex.
+On créer un fichier dans /var/tmp nommé code qui contient le code php que l'on va injecter pour exécuter getflag avec les droits.
+On met "[x {${exec(getflag)}}]" dans ce fichier pour exécuter la commande.
+On exécute le php avec ./level06 /var/tmp/code
