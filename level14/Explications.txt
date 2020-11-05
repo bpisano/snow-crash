@@ -1,0 +1,32 @@
+En arrivant sur la vm, on ne trouve pas d'exécutable. Nous ne faisons pas partit de la liste des sudoers donc impossible d'exploiter une faille sudo.
+On désassemble l'exécutable getflag avec gdb.
+
+gdb getflag
+disas main
+
+En recherchant dans le code, on remarque qu'il y a une série d'instuctions je.
+
+   0x08048b0f <+457>:	je     0x8048ccb <main+901>
+   0x08048b15 <+463>:	cmp    $0xbbe,%eax
+   0x08048b1a <+468>:	ja     0x8048b68 <main+546>
+   0x08048b1c <+470>:	cmp    $0xbba,%eax
+   0x08048b21 <+475>:	je     0x8048c3b <main+757>
+   0x08048b27 <+481>:	cmp    $0xbba,%eax
+   0x08048b2c <+486>:	ja     0x8048b4d <main+519>
+   0x08048b2e <+488>:	cmp    $0xbb8,%eax
+   0x08048b33 <+493>:	je     0x8048bf3 <main+685>
+   0x08048b39 <+499>:	cmp    $0xbb8,%eax
+   0x08048b3e <+504>:	ja     0x8048c17 <main+721>
+
+On suppose donc que le programme getflag contient donc tous les flags de chaque niveau, et permet d'afficher le bon en fonction de l'id de l'utilisateur qui exécute la commande. D'où les appels à getuid.
+On revient donc sur gdb, on met un breakpoint sur le main pour ensuite jump sur l'une de ces instructions.
+
+jump *0x08048b0f
+
+Le programme semble crash, ce qui est normal, mais nou sdonne quand même un output qui se révèle être le flag du level 00.
+
+On jump donc sur la dernière instruction je qui va finalement nous révéler le flag du level14.
+
+jump *0x08048bbb
+
+
