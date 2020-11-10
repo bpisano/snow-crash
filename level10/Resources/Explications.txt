@@ -1,5 +1,5 @@
 En arrivant sur la vm, on remarque un exécutable avec un fichier token sur lqeuel nous n'avons pas les droits.
-ltrace sur level10 nous indique que l'exécutable utilise access et open. Il existe une faille concernant access et open.
+gdb sur level10 nous indique que l'exécutable utilise access et open. Il existe une faille concernant access et open.
 Nous devons aussi ouvrir le port 6969 pour que le programme puisse s'y connecter.
 
 Objectifs:
