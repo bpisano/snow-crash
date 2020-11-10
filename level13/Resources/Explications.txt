@@ -3,5 +3,5 @@ Changer ce UUID, on va exploiter une faille avec la variable d'environement LB_P
 On fait une copie de level13 avec cp level13 /var/tmp/
 On code la fonction getuid qui retourne uniquement 4242. (voir getuid.c)
 On compile la library avec gcc -shared -o getuid.so getuid.c
-On preload la library avec export LB_PRELOAD="/var/tmp/getuid.so"
+On preload la library avec export LD_PRELOAD="/var/tmp/getuid.so"
 On exécute notre copie du programme ./level13_copy

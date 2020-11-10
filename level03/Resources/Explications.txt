@@ -1,4 +1,4 @@
 Exécuter ltrace sur l'exécutable level03 et voir que le programme fait un appel système "/usr/bin/env echo Exploit me".
-Remplacer la variable d'environement PATH "/tmp:$PATH". Cela permet de concaténer le dossier tmp à la variable PATH car nous possédons les droits d'exécution sur tmp.
-Copier /usr/bin/getflag dans tmp "cp /bin/getflag /tmp"
+Remplacer la variable d'environement PATH "/tmp:$PATH". EXPORT PATH="/tmp:$PATH" Cela permet de concaténer le dossier tmp à la variable PATH car nous possédons les droits d'exécution sur tmp.
+Copier /bin/getflag dans tmp "cp /bin/getflag /tmp/echo"
 Exécuter à nouveau level03 "./level03". On obtient le flag.
