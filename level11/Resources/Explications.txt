@@ -1,4 +1,4 @@
 En arrivant sur la vm, on remarque qu'il y a un script Lua qui attend une connexion client sur le port 5151.
 On lance la commande nc 127.0.0.1 5151 et on nous demande un mot de passe.
 On profite de l'utilisation de la fonction popen pour injecter du code.
-En tapant $(getflag) > /var/tmp/flag11 le script va executer getflag et rediriger la sortie sur un fichier dont nous avons les droits.
+En tapant $(getflag) > /var/tmp/flag le script va executer getflag et rediriger la sortie sur un fichier dont nous avons les droits.
